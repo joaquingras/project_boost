@@ -8,6 +8,7 @@ public class CollisionHandler : MonoBehaviour
 {
   private AudioSource _audioSrc;
   private bool _isTransitioning = false;
+  private bool _collisionActive = true;
 
   [SerializeField] float levelLoadDelay = 2f;
   [SerializeField] AudioClip crash;
@@ -18,23 +19,39 @@ public class CollisionHandler : MonoBehaviour
   void Start()
   {
     _audioSrc = GetComponent<AudioSource>();
+    _collisionActive = true;
   }
 
   void Update()
   {
     ProcessReloadLevel();
+    ProcessDisableCollisions();
+  }
+
+  private void ProcessDisableCollisions()
+  {
+
+    if (Input.GetKeyDown(KeyCode.C))
+    {
+      _collisionActive = !_collisionActive;
+    }
   }
 
   private void ProcessReloadLevel()
   {
-    if (Input.GetKey(KeyCode.L))
+    if (Input.GetKeyDown(KeyCode.L))
     {
-      Debug.Log("L presed");
+      LoadNextLevel();
     }
   }
 
   void OnCollisionEnter(Collision other)
   {
+    if (!_collisionActive)
+    {
+      return;
+    }
+
     var collisionTagObject = other.gameObject.tag;
 
     if (_isTransitioning)
@@ -44,7 +61,6 @@ public class CollisionHandler : MonoBehaviour
 
     switch (collisionTagObject)
     {
-
       case "Friendly":
         Debug.Log("Friendly object");
         break;
@@ -55,7 +71,6 @@ public class CollisionHandler : MonoBehaviour
       default:
         StartCrashSequence();
         break;
-
     }
 
     Debug.Log(other.gameObject.tag);

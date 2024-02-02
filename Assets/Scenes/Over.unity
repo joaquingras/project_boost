@@ -772,38 +772,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket
       objectReference: {fileID: 0}
-    - target: {fileID: 8860643969450955702, guid: 805345e6a615043e2a82324e4fb4a205, type: 3}
-      propertyPath: enginePs
-      value: 
-      objectReference: {fileID: 5797710281262641564}
-    - target: {fileID: 8860643969450955702, guid: 805345e6a615043e2a82324e4fb4a205, type: 3}
-      propertyPath: lBoosterPs
-      value: 
-      objectReference: {fileID: 5797710281262641562}
-    - target: {fileID: 8860643969450955702, guid: 805345e6a615043e2a82324e4fb4a205, type: 3}
-      propertyPath: rBoosterPs
-      value: 
-      objectReference: {fileID: 5797710281262641563}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 805345e6a615043e2a82324e4fb4a205, type: 3}
---- !u!198 &5797710281262641562 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3273326436170422271, guid: 805345e6a615043e2a82324e4fb4a205, type: 3}
-  m_PrefabInstance: {fileID: 5797710281262641561}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &5797710281262641563 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8822144721468550497, guid: 805345e6a615043e2a82324e4fb4a205, type: 3}
-  m_PrefabInstance: {fileID: 5797710281262641561}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &5797710281262641564 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4641011711616990331, guid: 805345e6a615043e2a82324e4fb4a205, type: 3}
-  m_PrefabInstance: {fileID: 5797710281262641561}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6075739865723062604
 PrefabInstance:
   m_ObjectHideFlags: 0
