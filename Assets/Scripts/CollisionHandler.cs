@@ -20,6 +20,19 @@ public class CollisionHandler : MonoBehaviour
     _audioSrc = GetComponent<AudioSource>();
   }
 
+  void Update()
+  {
+    ProcessReloadLevel();
+  }
+
+  private void ProcessReloadLevel()
+  {
+    if (Input.GetKey(KeyCode.L))
+    {
+      Debug.Log("L presed");
+    }
+  }
+
   void OnCollisionEnter(Collision other)
   {
     var collisionTagObject = other.gameObject.tag;
